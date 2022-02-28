@@ -1,0 +1,43 @@
+<body>
+<div class="container">
+  <!--<div class="l-margin"></div>-->
+<div class="contents">
+<br><h1><%= "#{Project.find(@p_id).name}" %></h1>
+<%= link_to 'プロジェクト名を変更', edit_project_path(Project.find(@p_id))%><br><br>
+  <ul style="list-style: none;"
+    <% @tasks.each do |task| %>
+    <li>
+      <%= task.limit_date %> <%= task.content %>
+      <%= link_to image_tag("done.png", alt: "Done", :size => "25x25"), task, method: :delete %>
+      <%= link_to image_tag("edit.png", alt: "Edit", :size => "25x25"), edit_task_path(task) %>
+      <%= link_to image_tag("delete.png", alt: "Destroy", :size => "25x25"), task, method: :delete, data:{ confirm: '本当によろしいですか？'} %>
+
+      <%#= link_to 'Edit', edit_task_path(task)%>
+      <%#= link_to 'Destroy', task, method: :delete, data:{ confirm: '本当によろしいですか？'} %>
+      <%#= link_to 'Done', task, method: :delete %>
+    </li>
+      <hr width="100%", align="left">
+      <%  end %>
+      <li><%= link_to '＋タスクの追加', new_path %></li>
+  </ul>
+</div>
+<div class="sidenavi">
+<ul style="list-style: none;">
+  <br><br>
+  <li><%= link_to '＋タスクの追加', new_path %></li>
+  <li><%= link_to '＋プロジェクトの追加', :controller => "projects", :action => "new"%></li>
+  <br>
+  <li><%= link_to '今日', '#' %></li>
+  <li><%= link_to '７日以内', '#' %></li>
+  <li><%= link_to '全て', root_path %></li>
+  <br>
+  <li>プロジェクト</li>
+  <% @project.each do |p|%>
+  <li>
+    <%= link_to "#{p.name}", :controller => "pages", :action => "by_project" , id: p.id %>
+</li>
+  <% end %>
+</ul>
+</div>
+</div>
+</body>

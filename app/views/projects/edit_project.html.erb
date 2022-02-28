@@ -1,0 +1,10 @@
+<h1>Update Project</h1>
+
+<%= form_for(@project, :url => {controller: 'projects', action: 'update_project'}) do |f| %>
+  <%= f.label :name, 'Project' %>
+  <%= f.text_field :name %>
+
+  <%= f.submit 'Update Project' %>
+<% end %>
+
+<%= link_to 'Task List', root_path %>

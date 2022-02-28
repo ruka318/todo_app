@@ -1,0 +1,9 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  content: MyString
+  limit_date: 2019-06-21
+
+two:
+  content: MyString
+  limit_date: 2019-06-21

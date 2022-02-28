@@ -1,0 +1,9 @@
+<h1>Create New Project</h1>
+
+<%= form_for(@project, :url => {controller: 'projects', action: 'create_project'}) do |f| %>
+  <%= f.label :name, 'Project' %>
+  <%= f.text_field :name %>
+  <%= f.submit 'Create Project' %>
+<% end %>
+
+<%= link_to 'Task List', root_path %>

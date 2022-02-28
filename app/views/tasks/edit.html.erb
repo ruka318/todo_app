@@ -1,0 +1,12 @@
+<h1>Update Task</h1>
+
+<%= form_for(@task) do |f| %>
+  <%= f.label :content, 'Task' %>
+  <%= f.text_field :content %>
+  <%= f.label :limit_date, 'Deadline' %>
+  <%= f.text_field :limit_date %>
+
+  <%= f.submit 'Update Task' %>
+<% end %>
+
+<%= link_to 'Task List', root_path %>
